@@ -1,0 +1,11 @@
+<div class="navigation">
+
+  <div class="app-label">{{appLabel}}</div>
+  <input class="search"
+         type="text"
+         [(ngModel)]="searchText"
+         (change)="onSearhTextChange($event)"
+         (blur)="onBlurHandler()"
+         (keydown)="onKeyDownHandler($event)">
+
+</div>

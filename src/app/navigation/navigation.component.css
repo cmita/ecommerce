@@ -1,0 +1,10 @@
+.navigation {
+    height: 50px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
+}
+
+
+

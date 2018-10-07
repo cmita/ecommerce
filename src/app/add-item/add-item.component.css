@@ -1,0 +1,11 @@
+.itemsDetails {
+    width: 500px;
+    color: red;
+    background-color: bisque;
+}
+.itemsDetails p {
+    color: black;
+}
+/*.main ::ng-deep .itemDetails &:last-child {
+              background: blue;
+}*/

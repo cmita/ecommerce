@@ -1,11 +1,56 @@
 <div class="navigation">
 
-  <div class="app-label">{{appLabel}}</div>
-  <input class="search"
-         type="text"
-         [(ngModel)]="searchText"
-         (change)="onSearhTextChange($event)"
-         (blur)="onBlurHandler()"
-         (keydown)="onKeyDownHandler($event)">
+    <div class="app-label">{{appLabel}}</div>
+    <input class="search"
+           type="text"
+           [(ngModel)]="searchText"
+           (change)="onSearhTextChange($event)"
+           (blur)="onBlurHandler()"
+           (keydown)="onKeyDownHandler($event)">
 
 </div>
+
+<!--div>All Items</div>
+<div>All Price</div-->
+
+<button (click)="addNewItemBtnClicked($event)">Add new Items</button>
+
+<app-add-item *ngIf="openAddItem"
+              [types]="itemTypes"
+              (valueEvent)="valueEventHandler($event)"
+              class="main"></app-add-item>
+
+<app-add-item *ngIf="openAddItem"
+              [types]="itemTypes"
+              (valueEvent)="valueEventHandler($event)"
+              class="main"></app-add-item>
+
+<!--div class="container">
+    <div class="row grid-container">
+        <div class="col-md-10">
+            <div class="table table table-striped table-hover">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Types</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of items">
+
+                            <td>{{ customer.lastName }}</td>
+                            <td>{{ customer.address }}</td>
+                            <td>{{ customer.city}}</td>
+                            <td>{{ customer.state.name }}</td>
+                            <td>{{ customer.orderTotal}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div-->

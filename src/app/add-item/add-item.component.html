@@ -1,0 +1,36 @@
+
+<form #MyForm>
+<div class= 'items'>
+    <div class="form-group">
+      <div class = 'itemsDetails'>
+        <p>Item Details</p>
+      </div>
+    </div>     
+
+    <div class="form-group">
+      <label>Type </label>
+      <select class = 'types'>
+        <option *ngFor = 'let type of types' 
+                [value]= 'type'>{{type}}</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label>Name </label>
+      <input type = 'text' name='types'>
+    </div>
+  
+    <div class="form-group">
+      <label>Items Info </label>
+      <input type = 'text' name='types'>
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type = 'text' name='types'>
+      </div>
+        
+  </div>
+
+</form>
+  <button (click)="submitBtnClicked($event)">Add</button>
+  

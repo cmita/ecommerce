@@ -5,6 +5,19 @@
     flex-direction: row;
     align-items: space-around;
 }
+.items input[type='text'],
+.items select {
+    width:300px;
+
+}
+
+th{
+    padding-right:20px;
+}
+
+
+
+
 
 
 

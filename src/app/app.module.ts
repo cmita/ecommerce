@@ -8,6 +8,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ViewItemComponent } from './view-item/view-item.component';
 import { ROUTES } from './app.routing.module';
 import { ContactComponent } from './contact/contact.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SomeResolveService } from './some-resolver.service';
 
 
 
@@ -17,14 +19,15 @@ import { ContactComponent } from './contact/contact.component';
     NavigationComponent,
     AddItemComponent,
     ViewItemComponent,
-    ContactComponent
+    ContactComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(ROUTES, { enableTracing: true })
   ],
-  providers: [],
+  providers: [SomeResolveService],
   bootstrap: [AppComponent],
   exports: [ContactComponent]
 })

@@ -5,7 +5,7 @@ import { Component, OnInit, Input, ViewChild, EventEmitter, Output } from '@angu
 @Component({
   selector: 'app-add-item',
   templateUrl: './add-item.component.html',
-  styleUrls: ['./add-item.component.css']
+  styleUrls: ['./add-item.component.scss']
 })
 export class AddItemComponent implements OnInit {
 

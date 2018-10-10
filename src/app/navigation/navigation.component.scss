@@ -15,6 +15,25 @@ th{
     padding-right:20px;
 }
 
+:host{
+   .main.second::ng-deep{
+      .itemsDetails {
+        p{
+            background: blue;
+
+      }
+    }
+  }
+}
+/*.second{
+  .itemsDetails {
+    p{
+        background: blue;
+    }
+
+  }
+}*/
+
 
 
 

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from '../main/main.component';
-import { MonthlyBusinessComponent } from '../monthly-business/monthly-business.component';
-import { WeeklyBusinessComponent } from '../weekly-business/weekly-business.component';
-import { WeeklyNumberComponent } from '../weekly-number/weekly-number.component';
+import { MainComponent } from './main/main.component';
+import { MonthlyBusinessComponent } from './monthly-business/monthly-business.component';
+import { WeeklyBusinessComponent } from './weekly-business/weekly-business.component';
+import { WeeklyNumberComponent } from './weekly-number/weekly-number.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },

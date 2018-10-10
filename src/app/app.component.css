@@ -1,11 +1,11 @@
 nav {
 
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
 }
 
 nav div {
-    width: 150px;
-    cursor: pointer;
+  width: 150px;
+  cursor: pointer;
 }

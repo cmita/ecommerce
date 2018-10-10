@@ -5,12 +5,13 @@ import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavigateGuardGuard } from './navigate-guard.guard';
 import { SomeResolveService } from './some-resolver.service';
+import { HomeComponent } from './home/home.component';
 
 export const ROUTES: Routes = [
 
   {
     path: 'home',
-    component: AppComponent
+    component: HomeComponent
   },
   {
     path: 'contact',
@@ -25,6 +26,10 @@ export const ROUTES: Routes = [
   {
     path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'product',
+    loadChildren: './product/product.module#ProductModule'
   },
   {
     path: '',

@@ -10,6 +10,7 @@ import { ROUTES } from './app.routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SomeResolveService } from './some-resolver.service';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -20,7 +21,8 @@ import { SomeResolveService } from './some-resolver.service';
     AddItemComponent,
     ViewItemComponent,
     ContactComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

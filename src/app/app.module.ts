@@ -11,8 +11,15 @@ import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SomeResolveService } from './some-resolver.service';
 import { HomeComponent } from './home/home.component';
-
-
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CompAComponent } from './comp-a/comp-a.component';
+import { CompBComponent } from './comp-b/comp-b.component';
+import { CompCComponent } from './comp-c/comp-c.component';
+import { TestService } from './test.service';
+import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
+import { ParentCompComponent } from './parent-comp/parent-comp.component';
+import { ChildCompComponent } from './child-comp/child-comp.component';
 
 @NgModule({
   declarations: [
@@ -22,15 +29,21 @@ import { HomeComponent } from './home/home.component';
     ViewItemComponent,
     ContactComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    CompAComponent,
+    CompBComponent,
+    CompCComponent,
+    ParentCompComponent,
+    ChildCompComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES, { enableTracing: true })
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES, { enableTracing: false })
   ],
-  providers: [SomeResolveService],
+  providers: [SomeResolveService, UserService, TestService],
   bootstrap: [AppComponent],
   exports: [ContactComponent]
 })
-export class AppModule { }
+export class AppModule {}

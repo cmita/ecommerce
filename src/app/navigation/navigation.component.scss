@@ -16,15 +16,22 @@ th{
 }
 
 :host{
+  background-color: red;
    .main.second::ng-deep{
       .itemsDetails {
         p{
             background: blue;
-
       }
     }
   }
 }
+
+::ng-deep add-item {
+  .itemDetails p {
+    background-color: red;
+  }
+}
+
 /*.second{
   .itemsDetails {
     p{

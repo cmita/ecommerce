@@ -1,3 +1,5 @@
+<!--<input type="text" #inputTemplateRef />-->
+<input type="text" id="abc" />
 <nav>
     <div routerLinkActive="active-route" [routerLink]="['./home']">Home</div>
     <div routerLinkActive="active-route"  [routerLink]="['./contact']">Contact</div>
@@ -8,7 +10,13 @@
   </nav>
 
 
+<div>
+<app-comp-a></app-comp-a>
+<app-comp-b></app-comp-b>
+<app-comp-c></app-comp-c>
+</div>
 
+<app-parent-comp></app-parent-comp>
 
 
 <router-outlet></router-outlet>

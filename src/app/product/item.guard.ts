@@ -11,9 +11,9 @@ import { Observable } from 'rxjs';
 })
 export class ItemGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const val = true;
-    /*fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then(response => response.json())
+    let val = true;
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => {(response.json())
       .then(json => {
         if (json) {
           console.log('json', json);
@@ -21,9 +21,12 @@ export class ItemGuard implements CanActivate {
         } else {
           val = false;
         }
-      });*/
+      });
     console.log('val', val);
 
     return val;
+  });
+  return val;
   }
+
 }

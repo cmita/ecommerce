@@ -6,9 +6,10 @@ import { Injectable } from '@angular/core';
 export class ItemResolverService {
   constructor() {}
   resolve() {
-    fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => {
+   /* fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => {
       console.log('response', response);
       return response;
-    });
+    });*/
+    return 200;
   }
 }

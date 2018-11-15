@@ -1,5 +1,5 @@
 <!--<input type="text" #inputTemplateRef />-->
-<input type="text" id="abc" />
+<!-- <input type="text" id="abc" />
 <nav>
     <div routerLinkActive="active-route" [routerLink]="['./home']">Home</div>
     <div routerLinkActive="active-route"  [routerLink]="['./contact']">Contact</div>
@@ -16,7 +16,18 @@
 <app-comp-c></app-comp-c>
 </div>
 
-<app-parent-comp></app-parent-comp>
+<app-parent-comp></app-parent-comp> -->
+
+
+<h4>Count: {{ count }}</h4>
+
+<div class="container p-2">
+  <button class="btn btn-success" (click)="increment()">Increment</button>
+  <button class="btn btn-primary" (click)="decrement()">decrement</button>
+  <hr>
+  <st-user></st-user>
+</div>
+
 
 
 <router-outlet></router-outlet>

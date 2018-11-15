@@ -24,6 +24,9 @@ import {
   finalize
 } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Store, select } from '@ngrx/store';
+import { AppState } from './state/counter.reducer';
+import { Increment, Decrement } from './state/counter.actions';
 
 // import 'rxjs/add/operator/map';
 
@@ -36,14 +39,29 @@ export class AppComponent implements OnInit {
   // @ViewChild('inputTemplateRef')
   // inputRef;
 
-  constructor() {
+  count$: Observable<AppState>;
+  count: any;
 
+  constructor(private store: Store<AppState>) {
   }
 
 
   ngOnInit() {
+    this.count$ = this.store.pipe(select('count'));
 
+    this.count$.subscribe(
+      (data) => {
+        console.log(data);
+        this.count = data['counter'];
+      });
   }
 
+  increment() {
+    this.store.dispatch(new Increment());
+  }
+
+  decrement() {
+    this.store.dispatch(new Decrement());
+  }
 
 }

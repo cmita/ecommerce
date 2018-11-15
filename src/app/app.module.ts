@@ -20,6 +20,11 @@ import { TestService } from './test.service';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 import { ParentCompComponent } from './parent-comp/parent-comp.component';
 import { ChildCompComponent } from './child-comp/child-comp.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment.prod';
+import { counterReducer } from './state/counter.reducer';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +39,16 @@ import { ChildCompComponent } from './child-comp/child-comp.component';
     CompBComponent,
     CompCComponent,
     ParentCompComponent,
-    ChildCompComponent
+    ChildCompComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES, { enableTracing: false })
+    RouterModule.forRoot(ROUTES, { enableTracing: false }),
+    StoreModule.forRoot({ 'count': counterReducer }),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [SomeResolveService, UserService, TestService],
   bootstrap: [AppComponent],

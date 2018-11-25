@@ -1,1 +1,13 @@
 {{ username$ | async | json }}
+
+<br><br>
+
+User Loading Status: <b>{{ userinfoLoadStatus$ | async }}</b>
+<br>
+
+<button class="btn btn-primary" (click)="fetchGithubUserInfo()">Fetch Github User Info</button>
+
+<br>
+<br>
+
+{{ userinfo$ | async | json}}

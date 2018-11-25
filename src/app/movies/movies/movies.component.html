@@ -1,0 +1,14 @@
+
+{{ moviename$ | async | json }}
+
+<br><br>
+
+User Loading Status: <b>{{ movieinfoLoadStatus$ | async }}</b>
+<br>
+
+<button class="btn btn-primary" (click)="fetchGithubUserInfo()">Fetch Github User Info</button>
+
+<br>
+<br>
+
+<!----{{ movieinfo$ | async | json}}-->

@@ -25,6 +25,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment.prod';
 import { counterReducer } from './state/counter.reducer';
 import { UserComponent } from './user/user.component';
+import { EffectsModule} from '@ngrx/effects';
+import { CounterEffects } from './state/counter.effects';
+import { MoviesModule } from './movies/movies.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import { UserComponent } from './user/user.component';
     HttpClientModule,
     RouterModule.forRoot(ROUTES, { enableTracing: false }),
     StoreModule.forRoot({ 'count': counterReducer }),
-    StoreDevtoolsModule.instrument()
+    EffectsModule.forRoot([CounterEffects]),
+    StoreDevtoolsModule.instrument(),
+    MoviesModule
   ],
   providers: [SomeResolveService, UserService, TestService],
   bootstrap: [AppComponent],

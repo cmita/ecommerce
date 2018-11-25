@@ -1,19 +1,31 @@
 // counter.reducer.ts
 import { Action } from '@ngrx/store';
-import { ActionTypes } from './counter.actions';
+import { ActionTypes, CounterActions } from './counter.actions';
 
-export const initialState = {
-  counter: 0,
-  userName: 'Shreemita'
-};
+
+
+export interface UserInfo {
+  username: string;
+  location: string;
+  company: string;
+  name: string;
+}
 
 export interface AppState {
   counter: number;
   userName: string;
+  userinfo: UserInfo;
+  userinfoStatus: string;
 }
 
+export const initialState = {
+  counter: 0,
+  userName: 'Shreemita',
+  userinfo: undefined,
+  userinfoStatus: 'not-loaded'
+};
 
-export function counterReducer(state: AppState = initialState, action: Action) {
+export function counterReducer(state: AppState = initialState, action: CounterActions) {
   switch (action.type) {
     case ActionTypes.Increment:
       return {
@@ -32,6 +44,27 @@ export function counterReducer(state: AppState = initialState, action: Action) {
         ...state,
         counter: 0
       };
+
+    case ActionTypes.LoadUserInfo:
+      return {
+        ...state,
+        userinfoStatus: 'loading'
+      };
+
+    case ActionTypes.LoadUserInfoSuccess:
+      return {
+        ...state,
+        userinfoStatus: 'loaded',
+        userinfo: action.payload.userinfo
+      };
+
+    case ActionTypes.LoadUserInfoFailure:
+      return {
+        ...state,
+        userinfoStatus: 'failed',
+        userinfo: undefined
+      };
+
 
     default:
       return state;
